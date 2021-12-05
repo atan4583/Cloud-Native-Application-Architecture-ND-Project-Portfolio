@@ -1,0 +1,3 @@
+[submodule "Project4-HardenedMicroservicesEnvironment/vuln_app"]
+	path = Project4-HardenedMicroservicesEnvironment/vuln_app
+	url = git@github.com:atan4583/dvpwa.git

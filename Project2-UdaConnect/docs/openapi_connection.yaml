@@ -1,0 +1,43 @@
+swagger: '2.0'
+basePath: /
+paths:
+  /api/persons/{person_id}/connection:
+    parameters:
+      - in: query
+        description: Proximity to a given user in meters
+        name: distance
+        type: string
+      - in: query
+        description: Upper bound of date range
+        name: end_date
+        type: string
+      - in: query
+        description: Lower bound of date range
+        name: start_date
+        type: string
+      - name: person_id
+        in: path
+        required: true
+        type: string
+    get:
+      responses:
+        '200':
+          description: Success
+      operationId: get_connection_data_resource
+      tags:
+        - UdaConnect
+info:
+  title: UdaConnect Connection API
+  version: 0.1.0
+produces:
+  - application/json
+consumes:
+  - application/json
+tags:
+  - name: UdaConnect
+    description: Connections api
+responses:
+  ParseError:
+    description: When a mask can't be parsed
+  MaskError:
+    description: When any error occurs on mask

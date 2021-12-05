@@ -1,0 +1,22 @@
+Instruction for making a sample request to gRPC server:
+
+1. Prequisites: udaConnect app is up and python installed in the local environment 
+
+2. Navigate to modules/grpc_api folder
+
+3. If grpctools is not yet installed in the local environment, run: 
+   pip install grpcio-tools
+
+4. See main.py for gRPC server details. It runs on the `udaconnect-grpc-api` pod  
+
+5. The url for sending a request is `localhost:30005`. To post a sample payload, run: 
+   python writer_loc.py
+   
+   Tip 1: person_id in the sample data must already exist in Postgres `person` table 
+   Tip 2: to see server messages, run: kubectl logs --tail=50 <udaconnect-grpc-api pod> 
+   
+6. To view the new data, either:
+   - use Postman (see location requests in docs/postman.json), or
+   - query Postgres `location` table (port: 5432 inside Postgres pod or 31432 from outside)
+
+Happy testing :)
